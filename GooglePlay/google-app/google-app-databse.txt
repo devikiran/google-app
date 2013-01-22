@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS applications;
+GRANT ALL PRIVILEGES ON applications.* TO pc@localhost IDENTIFIED BY 'pc';
+
+USE applications;
+
+CREATE TABLE IF NOT EXISTS appInfo (
+  rating VARCHAR(50) NOT NULL,
+  title  VARCHAR(30) NOT NULL,
+  ratingsCount int(10) NOT NULL,
+  creator VARCHAR(30) NOT NULL,
+  appType VARCHAR(30) NOT NULL,
+  ID VARCHAR(30)PRIMARY KEY,
+  packageName VARCHAR(50) NOT NULL,
+  version VARCHAR(10) NOT NULL,
+  versionCode int(10) NOT NULL,
+  creatorId VARCHAR(40) NOT NULL
+) engine=InnoDB;
+
+
+     
+
+CREATE TABLE IF NOT EXISTS comments (
+  rating int(10) NOT NULL,
+  creationTime int(20) NOT NULL,
+  authorName VARCHAR(40) PRIMARY KEY,
+  text VARCHAR(255) NOT NULL,
+  authorId VARCHAR(50) NOT NULL
+) engine=InnoDB;
+
+
+ INSERT IGNORE INTO appInfo VALUES (1.121212, 'angry bird', 1212,'mandeep','application',2222,'com.or.sd.dfd',2.2,333,'lion','game','44sdsd33sdsd');
